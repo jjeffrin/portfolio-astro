@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content"
+import type { CollectionEntry } from "astro:content";
+
+const allBlogs: CollectionEntry<'blog'>[] = await getCollection('blog');
 ---
 
 <Layout>
-	<Welcome />
+	<div id="container">
+		<main>
+			<section>
+				<h1>hello, this is a blog.</h1>
+				<p>Created using Astro JS.</p>
+				{allBlogs.map(blog => ( 
+					<a class="block" href={'/blog/' + blog.slug}>{blog.data.title}</a>
+				))}
+			</section>
+		</main>
+	</div>
 </Layout>

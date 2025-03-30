@@ -1,0 +1,18 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
+
+const { slug } = Astro.params;
+
+const entry = await getEntry("blog", slug);
+
+const { Content } = await entry.render();
+---
+
+<Layout>
+    <Prose>
+        <div>{entry.data.title}</div>
+        <Content />
+    </Prose>
+</Layout>
