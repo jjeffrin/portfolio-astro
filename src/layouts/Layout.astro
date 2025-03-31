@@ -4,6 +4,8 @@ import "../styles/global.css";
 
 // Supports weights 100-900
 import "@fontsource-variable/inter";
+import CustomHeader from "../components/CustomHeader.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -16,7 +18,9 @@ import "@fontsource-variable/inter";
 		<title>Astro Basics</title>
 		<ClientRouter />
 	</head>
-	<body class="max-w-[768px] mx-auto p-8 bg-slate-50 text-slate-700">
+	<body class="max-w-[768px] mx-auto px-8 my-12 bg-slate-50 text-slate-700">
+		<CustomHeader heading="Hello, I'm Jeffrin Jerome." />
+		<Navbar />
 		<slot />
 	</body>
 </html>

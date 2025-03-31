@@ -1,0 +1,11 @@
+---
+const currentPath = Astro.url.pathname
+---
+
+<div class="text-sm flex flex-row items-center justify-normal gap-4 mb-4">
+    <a href="/work" class={currentPath === '/work' ? 'font-bold' : 'font-normal'}>Work</a>
+    <a href="/tech" class={currentPath === '/tech' ? 'font-bold' : 'font-normal'}>Tech</a>
+    <a href="/articles" class={currentPath === '/articles' ? 'font-bold' : 'font-normal'}>Articles</a>
+    <a href="/wallpapers" class={currentPath === '/wallpapers' ? 'font-bold' : 'font-normal'}>Wallpapers</a>
+    <a href="/photos" class={currentPath === '/photos' ? 'font-bold' : 'font-normal'}>Photos</a>    
+</div>

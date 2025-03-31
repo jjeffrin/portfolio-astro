@@ -1,0 +1,13 @@
+---
+const { heading } = Astro.props;
+---
+
+<a href="/">
+    <div class="flex flex-row items-center gap-4 mb-2 group">
+        <div
+            class="h-4 w-4 rounded-full bg-slate-700 transition-transform duration-300 group-hover:translate-x-2"
+        >
+        </div>
+        <h1 class="font-bold">{heading}</h1>
+    </div>
+</a>
