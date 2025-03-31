@@ -12,7 +12,7 @@ const { Content } = await entry.render();
 
 <Layout>
     <Prose>
-        <div>{entry.data.title}</div>
+        <div transition:name={slug}>{entry.data.title}</div>
         <Content />
     </Prose>
 </Layout>

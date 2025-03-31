@@ -1,10 +1,9 @@
 ---
-
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
-const allBlogs: CollectionEntry<'blog'>[] = await getCollection('blog');
+const allBlogs: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
 
 <Layout>
@@ -13,9 +12,16 @@ const allBlogs: CollectionEntry<'blog'>[] = await getCollection('blog');
 			<section>
 				<h1>hello, this is a blog.</h1>
 				<p>Created using Astro JS.</p>
-				{allBlogs.map(blog => ( 
-					<a class="block" href={'/blog/' + blog.slug}>{blog.data.title}</a>
-				))}
+				{
+					allBlogs.map((blog) => (
+						<a 
+						class="block" 
+						href={"/blog/" + blog.slug}
+						transition:name={blog.slug}>
+							{blog.data.title}
+						</a>
+					))
+				}
 			</section>
 		</main>
 	</div>
