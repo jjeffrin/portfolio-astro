@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import CustomHeader from "../components/CustomHeader.astro";
-import Navbar from "../components/Navbar.astro";
 
 const allBlogs: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
@@ -11,14 +9,10 @@ const allBlogs: CollectionEntry<"blog">[] = await getCollection("blog");
 <Layout>
 	<main>
 		<section>
-			<p class="text-sm mb-1 text-justify font-semibold">
-				I am from Nagercoil, India. Love to play around with code and
-				build software.
-			</p>
 			<p class="text-sm mb-4 text-justify">
-				When I'm not doing that, I usually spent time listening to
-				music, watching tech videos on YouTube, watch
-				cricket/series/movies and play video games on my PC.
+				I love to play around with code and build software. When I'm not
+				doing that, I usually spent time listening to music, watching
+				tech videos on YouTube or cricket and play video games on my PC.
 			</p>
 			<h2 class="text-sm underline mb-2">Recent thoughts & articles</h2>
 			<div class="text-sm text-justify mb-4">
